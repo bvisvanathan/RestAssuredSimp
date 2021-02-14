@@ -2,6 +2,7 @@ package com.reqres.testcases;
 
 import org.json.simple.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -14,18 +15,33 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 public class GetRequest {	
 	
 	
 	 RequestSpecification httpRequest = null;
 	    Response response = null;
 	    
+      public  Logger logger;
+	    
+	    @BeforeSuite
+	    public void setup()
+	    {
+	        logger=Logger.getLogger("ReqresRestAPI");
+	        PropertyConfigurator.configure("log4j.properties");
+	        logger.setLevel(Level.DEBUG);
+	    }
+	    
 	    @BeforeTest
 	    public void BeforeMethod() {
 	        //declare the baseURL 
 	        RestAssured.baseURI = "https://reqres.in";
 	        //This specifices this is HTTP Protocol Specification
-	        httpRequest = RestAssured.given();        
+	        httpRequest = RestAssured.given(); 
+	        logger.info("log test before method");
 	    }
 	    
 	    @Test

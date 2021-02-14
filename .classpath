@@ -24,5 +24,6 @@
 	<classpathentry kind="lib" path="/home/balajivisvanath/RestAssured/Softwares/rest-assured-4.0.0-deps/tagsoup-1.2.1.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="/home/balajivisvanath/RestAssured/hamcrest-all-1.3.jar"/>
+	<classpathentry kind="lib" path="/home/balajivisvanath/RestAssured/RestAssuredCucumberJars/FinalRestAssuredSoftwares/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
